@@ -10,6 +10,7 @@ import telegram from './telegram.png';
 import youtube from './youtube.png';
 import close2 from './close2.png';
 import emptyCart from './emptycart.webp';
+import up from './arrow.png';
 
 import phone from './phone.jpg';
 import laptop from './laptop.jpg';
@@ -53,7 +54,8 @@ export const images = {
     telegram,
     youtube,
     close2,
-    emptyCart
+    emptyCart,
+    up
 }
 
 export const menu_category = [

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: 'vazir';
   src: url('./fonts/Vazir-Regular.woff2') format('woff2'),
@@ -37,4 +38,8 @@ body{
 
 .shadow-item {
   box-shadow: rgba(210, 125, 35, 0.24) 0px 3px 8px;
+}
+
+.grid-col-cart{
+  grid-template-columns: 2fr 1fr 2fr 1fr 2fr 1fr;
 }

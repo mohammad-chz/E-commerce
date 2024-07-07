@@ -1,0 +1,11 @@
+.slick-slider {
+    direction: rtl; /* Force right-to-left direction */
+  }
+  
+  .slick-list {
+    direction: ltr; /* Reset to left-to-right for internal elements */
+  }
+  
+  .slick-dots li.slick-active button::before {
+    color: #ff6347 !important; /* Custom color for the active dot */
+  }     

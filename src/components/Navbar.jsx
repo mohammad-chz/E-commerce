@@ -1,24 +1,33 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { images } from '../assets/assets'
 import { Link } from 'react-router-dom';
+import { StoreContext } from '../context/StoredContext';
 
-const Navbar = ({setIsShow}) => {
+const Navbar = ({ setIsShow, footerRef, navbarRef }) => {
     const [menu, setMenu] = useState("home");
-    const [isOpenMenu, setIsopenMenu] = useState(false)
+    const [isOpenMenu, setIsopenMenu] = useState(false);
+    const {getTotalPrice} = useContext(StoreContext)
+
+    const scrollToFooter = () => {
+        footerRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
 
     return (
         // Desktop Responsive
-        <header className='relative flex items-center justify-between bg-orange-100 py-4 px-14   max-sm:gap-4 max-sm:py-2 max-sm:px-4'>
+        <header className='relative flex items-center justify-between bg-orange-100 py-4 px-14   max-sm:gap-4 max-sm:py-2 max-sm:px-4' id='navbar' ref={navbarRef}>
             <img className='hidden md:block w-20' src={images.logo} alt="Cart Logo" />
             <ul className='hidden md:flex items-center justify-center gap-12'>
                 <Link to='/' className=''><li onClick={() => setMenu("home")} className={`${menu === "home" ? "text-orange-600 font-bold" : "text-slate-800"} hover:text-orange-400 cursor-pointer`}>خانه</li></Link>
                 <Link><li onClick={() => setMenu("menu")} className={`${menu === "menu" ? "text-orange-600 font-bold" : "text-slate-800"} hover:text-orange-400 cursor-pointer`}>منو</li></Link>
                 <Link><li onClick={() => setMenu("app")} className={`${menu === "app" ? "text-orange-600 font-bold" : "text-slate-800"} hover:text-orange-400 cursor-pointer`} >برنامه موبایل</li></Link>
-                <Link><li onClick={() => setMenu("contact")} className={`${menu === "contact" ? "text-orange-600 font-bold" : "text-slate-800"} hover:text-orange-400 cursor-pointer`}>تماس با ما</li></Link>
+                <li onClick={scrollToFooter} className={`${menu === "contact" ? "text-orange-600 font-bold" : "text-slate-800"} hover:text-orange-400 cursor-pointer`}>تماس با ما</li>
             </ul>
             <div className='hidden md:flex items-center justify-center gap-6'>
                 <img className='w-10' src={images.search} alt="Search Logo" />
-                <Link onClick={() =>setMenu("cart")} to='/cart'><img className={`${menu === 'cart' ? 'w-14' : 'w-10'}`} src={images.iconCart} alt="Search Logo" /></Link>
+                <div className='relative'>
+                    <Link onClick={() => setMenu("cart")} to='/cart'><img className={`${menu === 'cart' ? 'w-14' : 'w-10'}`} src={images.iconCart} alt="Search Logo" /></Link>
+                    <div className={`absolute top-0 w-4 h-4 rounded-full ${getTotalPrice() === 0 ? "" : "bg-orange-500"}`}></div>
+                </div>
                 <button onClick={() => setIsShow(true)} className='outline-none border-none bg-orange-300 font-bold text-slate-700 hover:bg-orange-400 px-4 py-2 rounded-lg'>ورود و ثبت نام</button>
             </div>
 

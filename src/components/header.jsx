@@ -1,14 +1,34 @@
+// Header.js
 import React from 'react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Carousel from './Carousel';
 
 const Header = () => {
+  const slides = [
+    {
+      image: '../../hero-main.jpg',
+      title: 'انواع وسایل دیجیتال با یک کلیک!',
+      description: 'انواع گوشی، لپتاپ، ساعت دیجیتال، سیستم های گیمینگ و صدها وسایل دیجیتال در کنار شما',
+      position: 'justify-center inset-0'
+    },
+    {
+      image: '../../ecommerce.webp',
+      title: 'بهترین قیمت‌ها در بازار',
+      description: 'تضمین بهترین قیمت برای تمامی محصولات دیجیتال',
+      position: 'md:top-2/4 md:right-4',
+    },
+    {
+      image: '../../shop-hero.jpg',
+      title: 'خرید آسان و سریع',
+      description: 'تجربه خریدی لذت‌بخش با خدمات ویژه ما',
+      position: 'md:top-2/4 md:right-4',
+    },
+  ];
+
   return (
-    <div className="relative h-[500px] bg-center bg-cover bg-no-repeat md:m-14 rounded-lg max-sm:h-[300px] m-6"
-      style={{ backgroundImage: "url('../../hero.jpg')" }}>
-      <div className='absolute inset-0 flex flex-col gap-4 justify-center items-center text-white'>
-          <p className='md:text-2xl text-xl font-bold fade-in'>انواع وسایل دیجیتال با یک کلیک!</p>
-          <p className='max-sm:p-4 animate-bounce fade-in max-sm:text-sm'>انواع گوشی، لپتاپ، ساعت دیجیتال، سیستم های گیمینگ و صدها وسایل دیجیتال در کنار شما</p>
-          <button className='bg-orange-300 w-38 text-slate-700 font-bold hover:bg-orange-400 outline-none border-none fade-in px-4 py-2 rounded-lg'>مشاهده محصولات</button>
-      </div>
+    <div className="relative">
+      <Carousel slides={slides} className="relative h-[500px] md:m-14 rounded-lg max-md:h-[250px] m-6" />
     </div>
   );
 };
