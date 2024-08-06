@@ -39,7 +39,7 @@ const Cart = () => {
         })}
       </div>
         :
-        <div className='flex h-screen w-screen justify-center items-center'>
+        <div className='flex flex-col sm:flex-row h-screen w-screen justify-center items-center'>
             <h1 className='font-bold md:text-2xl text-orange-500'>هیچ محصولی در سبد خرید شما موجود نیست</h1>
             <img className='w-96' src={images.emptyCart} alt="empty Cart" />
         </div>}
