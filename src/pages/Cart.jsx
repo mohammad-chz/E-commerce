@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { itemCount, removeItem, getTotalPrice } = useContext(StoreContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className='overflow-hidden'>

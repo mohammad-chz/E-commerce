@@ -11,7 +11,7 @@ const DeviceDisplay = ({category}) => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-between p-6 md:p-12 gap-6'>
                 {device.map((item, index) => {
                     if(category === "all" || category === device[index].category){
-                        return <ShowDevice key={index} id={item._id} name={item.name} image={item.image} price={item.price}/>
+                        return <ShowDevice key={index} id={item._id} name={item.name} image={item.image} price={item.price} about={item.about}/>
                     }
                 })}
             </div>

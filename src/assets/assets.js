@@ -30,6 +30,7 @@ import ps5 from './ps5.jpg';
 import xbox from './xbox.jpg';
 
 import applwWatch from './appleWatch.webp';
+import applwWatch2 from './watch2.webp';
 
 export const images = {
     iconCart,
@@ -50,6 +51,7 @@ export const images = {
     ps5,
     xbox,
     applwWatch,
+    applwWatch2,
     instagram,
     telegram,
     youtube,
@@ -87,7 +89,8 @@ export const device = [
         name: "آیفون 10 معمولی حافظه 128 گیگ",
         image: phone1,
         price: 55000000,
-        category: 'mobile'
+        category: 'mobile',
+        about: 'این یک تست میباشد'
     },
     {
         _id: 2,
@@ -143,6 +146,13 @@ export const device = [
         name: "اپل واپ سری 9",
         image: appleWatch,
         price: 23000000,
+        category: 'watch'
+    },
+    {
+        _id: 10,
+        name: "ساعت هوشمند سامسونگ",
+        image: applwWatch2,
+        price: 12000000,
         category: 'watch'
     },
 ]
